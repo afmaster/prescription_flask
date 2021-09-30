@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Receituário Especial</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+    <style>
+	  html,body{
+      margin:0;
+      height:100%;
+      }
+	</style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+    <h1> RECEITUÁRIO ESPECIAL </h1>
+
+    <form action= "" method = "POST">
+      {{ form.csrf_token }}
+
+      <div class= "form group">
+        </br>
+        <div>
+            <label>Nome do paciente  </label>
+            {{ form.patient(_class="form-control", placeholder="Nome Completo")}}
+        </div>
+
+        <div>
+            <label>Medicação </label>
+            {{ form.drug(_class="form-control", placeholder="Droga + concentração + mg")}}
+        </div>
+
+        <div>
+            <label>Quantidade (cx ou cp) </label>
+            {{ form.amount(_class="form-control", placeholder="No + cx / cp")}}
+        </div>
+
+        <div>
+            <label>Posologia (cp/dia) </label>
+            {{ form.posology(_class="form-control", placeholder="No de cps por dia")}}
+        </div>
+
+        <div>
+            <label>Observação - Linha 1 </label>
+            {{ form.observation(_class="form-control", placeholder="Obs ou orientações")}}
+        </div>
+
+        <div>
+            <label>Observação - Linha 1 </label>
+            {{ form.observation_2(_class="form-control", placeholder="Obs ou orientações")}}
+        </div>
+
+        <div>
+            <label>Adicionar datas automaticamente </label>
+            {{ form.check(_class="form-control")}}
+        </div>
+        <div>
+            <label>Número de cópias </label>
+            {{ form.copies(_class="form-control", placeholder="1 a 3")}}
+        </div>
+
+      </div>
+        <br>
+        <div>
+            <button type="submit" name="action" value="clear" class="btn btn-default">Novo</button>
+            <button type="submit" name="action" value="pdf" class="btn btn-default">Criar PDF</button>
+            <button type="submit" name="action" value="print" class="btn btn-default">Imprimir</button>
+            <button type="submit" name="action" value="open" class="btn btn-default">Abrir</button>
+
+        </div>
+
+    </form>
+
+    </div>
+
+  </body>
+</html>
