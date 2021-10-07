@@ -14,10 +14,15 @@ from datetime import datetime
 from datetime import timedelta
 from docx.shared import Pt
 from docx2pdf import convert
+import webview
+
+
 
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'MMXXII'
+
+webview.create_window('Prescript', app, width=450, height=500, resizable=False, frameless=True, confirm_close=True)
 
 url = "http://127.0.0.1:5000"
 
@@ -237,6 +242,7 @@ def index():
 
 
 if __name__ == '__main__':
-    app.run()
+    #app.run()
+    webview.start()
 
 
